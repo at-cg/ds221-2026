@@ -88,82 +88,64 @@ Instead of comparing every pair of leaves in the whole tree, put each leaf into 
 Hint 3 — Inside one bucket, how do you check "different order"?
 Within a bucket, look at the **original (unsorted) paths**. If two leaves in the same bucket have the *exact same* original path, they're just duplicates of each other — not twins.
 
-## Question 3: Disaster Relief Convoy
+## Question 3: Automated Mailroom Robot
 
 ### Problem Description
 
-A relief convoy must travel from `source` to `destination` through a road network of `n` nodes (0-indexed, undirected, possibly with parallel edges).
+You are programming the navigation and delivery logic for an automated mailroom robot in a large corporate office. 
 
-Each road belongs to one of two kinds:
-- **Free road** — no restriction, use as many times as needed.
-- **Restricted road** — belongs to one of several **hazard categories** (e.g. `"bridge"`, `"tunnel"`). Crossing a restricted road of category `c` consumes one unit from that category's **engineering escort budget**. Each category has its own separate budget — using up the `"bridge"` budget does not affect the `"tunnel"` budget, and budgets are **not interchangeable**.
+Packages arrive from a basement warehouse via a conveyor belt into the Arrival Room. The robot has a vertical carrying bin that operates strictly as a **Stack** (Last-In, First-Out). Because the bin is narrow, the robot can only deliver a package if it is currently sitting at the absolute top of the stack.
 
-Find the **minimum total cost** route from `source` to `destination` such that, for every hazard category, the number of restricted roads of that category used does **not exceed its budget**. A route may revisit nodes/edges if useful; budgets are consumed cumulatively over the whole route, not per visit.
+The robot must pick up packages from the conveyor belt (which acts as a **Queue**—First-In, First-Out), load them into its stack, and navigate the office to deliver them. If a package needs to be delivered but is trapped beneath other packages, the robot cannot deliver it. It has two choices:
 
-**Input:**
-- `n` — number of nodes
-- `edges` — list of `[u, v, cost, category]`, where `category` is `0` for a free road, or an index `i >= 1` meaning it belongs to `categories[i-1]`
-- `categories` — list of distinct hazard category names
-- `budget` — parallel array; `budget[i]` is the max number of `categories[i]` roads usable in the route
-- `source`, `destination`
+1. Travel to the top package's destination and deliver that one first (even if it's further away).
+2. Travel to a designated **Sorting Room**. In a Sorting Room, the robot can temporarily unload its stack onto a table and reload the packages in any order it chooses.
 
-**Output:** Single integer — minimum total cost, or `-1` if no route satisfies both reachability *and* every category budget.
+Your task is to write an algorithm that calculates the **minimum total time** required for the robot to load and deliver all packages.
+
+**The Rules & Mechanics:**
+* **The Building:** The office is an undirected graph of rooms (nodes) connected by hallways (edges). Each hallway has a travel time (weight).
+* **The Arrival Room:** Node `0` is always the Arrival Room. The robot loads packages and starts delivery from here.
+* **Loading:** Loading takes `1` unit of time per package. The first package loaded from the queue goes to the bottom of the stack; the last package loaded stays on top.
+* **Delivering:** Delivering takes `0` units of time. The robot can only drop off a package if it is in the correct room AND that package is currently at the top of the stack. 
+* **Sorting:** Navigating to a Sorting Room and rearranging the stack takes a fixed time penalty of `S` units of time, regardless of how many packages are in the stack.
+* **Completion:** The task is complete when all packages in the bin have been delivered.
+
+### Input Format
+Read from a standard text file with the following structure:
+* **Line 1:** Four integers `N E C S` (Total rooms, Number of hallways, Max stack capacity, Sorting time penalty).
+* **Next E lines:** Three integers `u v w` representing a hallway between room `u` and room `v` with a travel time of `w`.
+* **Next Line:** An integer `K`, followed by `K` integers representing the IDs of the Sorting Rooms.
+* **Next Line:** An integer `Q` (total packages on the belt), followed by `Q` integers representing the destination room IDs for the packages, in the exact order they sit on the conveyor belt. *(Assume `Q <= C`, so all packages fit in the bin).*
+
+### Output Format
+* **Minimum Total Time:** A single integer representing the fastest possible time to load and complete all deliveries.
+
+### Deliverables to Report
+Along with your source code, you must submit a brief technical report containing:
+* **Empirical Runtime:** Execution time on provided test cases (in seconds).
+* **Theoretical Analysis:** Time and space complexity in Big-O notation.
+* **Optimization:** Is it possible to achieve an asymptotically faster runtime? If no, explain why. If yes, explain or implement the optimal approach.
+* **AI/Copilot Log:** A brief summary of how you utilized LLMs or Copilot. What prompts failed? Where did the AI get stuck?
 
 ### Constraints
 
-- `1 <= n <= 100`
-- `0 <= edges.length <= 500`
-- `0 <= cost <= 1000`
-- `0 <= len(categories) <= 3`
-- `0 <= budget[i] <= 10`
-- `0 <= source, destination < n`
+* $1 \le N \le 500$
+* $1 \le E \le 2000$
+* $1 \le Q \le 10$
+* $0 \le S, w \le 1000$
 
 ### Sample Test Cases
 
-Samples 1–3 share this graph:
-
-```
-n = 5
-categories = ["bridge", "tunnel"]
-edges = [
-  [0, 1, 10, 0],        // free, cost 10
-  [1, 4, 10, 0],        // free, cost 10
-  [0, 2, 2, 1],         // bridge, cost 2
-  [2, 4, 2, 1],         // bridge, cost 2
-  [0, 3, 3, 2],         // tunnel, cost 3
-  [3, 4, 1, 1]          // bridge, cost 1
-]
-source = 0, destination = 4
-```
-
 **Sample 1**
-```
-Input:  budget = [1, 1]
-Output: 4
-```
-Explanation: Route `0→3 (tunnel, 3)→4 (bridge, 1)` costs `4`, using 1 tunnel and 1 bridge — within budget, and cheaper than the free-only route (`20`) or the double-bridge route `0→2→4` (which needs 2 bridges, over budget).
+```text
+Input:
+4 3 5 2
+0 1 10
+0 2 10
+1 3 10
+1 0
+3 1 2 3
 
-**Sample 2 (the trap)**
-```
-Input:  budget = [1, 0]
-Output: 20
-```
-Explanation: You'd think having 1 bridge left is useful, but every way to *reach* a bridge edge from `0` (nodes 2 or 3) requires either 2 bridges (`0→2→4`, over the bridge budget) or 1 tunnel (`0→3→4`, and the tunnel budget is `0`). Neither works, so the bridge budget goes unused and you fall back to the all-free route `0→1→4 = 20`. Budget for one category is worthless if reaching it costs a category you don't have budget for.
-
-**Sample 3**
-```
-Input:  budget = [0, 0]
-Output: 20
-```
-Explanation: No restricted roads allowed at all — only the free route `0→1→4` works, cost `20`.
-
-**Sample 4 (reachable but infeasible)**
-```
-Input:  n = 3
-        categories = ["tunnel"]
-        edges = [[0, 1, 1, 1], [1, 2, 1, 1]]
-        budget = [1]
-        source = 0, destination = 2
-Output: -1
-```
-Explanation: `0` and `2` are perfectly connected in the graph, but the *only* route between them (`0→1→2`) crosses two tunnel edges, and the tunnel budget is only `1`. Plain reachability is not enough — this is the core trick of the problem: a route can exist structurally and still be impossible under the budget.
+Output:
+45
