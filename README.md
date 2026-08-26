@@ -1,34 +1,33 @@
-## Question 1: Task Scheduler with Per-Task Cooldowns
+## Question 1: Mess Rotation Streak
 
-You're given distinct task types, how many times each occurs, and a different cooldown for each type. A task type can only run again after its own cooldown has fully elapsed. Find the **minimum total time units** (including forced idle slots) to finish all tasks.
+The 5 IISc messes — A, B, C, D, E — follow a fixed weekly special-dish rotation: A → B → C → D → E → A → B → ..., repeating cyclically forever (day `n` continues right where day `0` left off — the schedule never resets). Every day, students report a satisfaction delta for that day's special dish: positive if they liked it more than the regular menu, negative if less. Find the maximum sum achievable over any contiguous streak of days, where a streak is allowed to wrap around from the end of the log back to the beginning, since the rotation itself doesn't stop where your log happens to end.
 
-Formally: if a task of type `i` runs at time `t`, it cannot run again until time `t + cooldown[i] + 1`.
+Formally: given an array `delta[n]`, find `max(delta[i] + delta[i+1] + ... + delta[j])` over all valid streaks, where a streak may either be a normal contiguous range `[i, j]` (`i <= j`), or a wrapping range covering `[i, n-1] + [0, j]` (`j < i`). A streak must be non-empty, and cannot span the entire array wrapped all the way around (i.e., it cannot include every element twice).
 
-**Input:** Three parallel arrays — `tasks[i]` is a type label, `counts[i]` its occurrence count, `cooldown[i]` its cooldown.
+**Input:** Single array — `delta[i]` is the satisfaction delta for day `i`.
 
-**Output:** Single integer — minimum total time units.
+**Output:** Single integer — maximum streak sum.
 
 ### Constraints
 
-- `1 <= len(tasks) <= 26`
-- `1 <= counts[i] <= 10^4`
-- `0 <= cooldown[i] <= 100`
+- `1 <= n <= 10^5`
+- `-10^4 <= delta[i] <= 10^4`
 
 ### Sample Test Cases
 
 **Sample 1**
 ```
-Input:  tasks=["A","B"], counts=[2,2], cooldown=[2,2]
-Output: 5
+Input: delta=[3,-1,2,-5,4]
+Output: 8
 ```
-Explanation: The tasks are performed in the order `A B idle A B`.
+Explanation: Wrapping the streak — day E (`4`) followed by days A, B, C (`3, -1, 2`) — gives `4+3-1+2 = 8`
 
 **Sample 2**
 ```
-Input:  tasks=["A","B","C"], counts=[3,1,1], cooldown=[1,0,0]
-Output: 5
+Input: delta=[-2,-3,-1,-4]
+Output: -1
 ```
-Explanation: No idle needed — B and C (cooldown 0) slot neatly between A's repeats. An optimal order is: `A B A C A`
+Explanation: The best streak is just the single least-negative day, `[-1]`, giving `-1`.
 
 ---
 
