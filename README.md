@@ -1,8 +1,8 @@
 ## Question 1: Mess Rotation Streak
 
-The 5 IISc messes — A, B, C, D, E — follow a fixed weekly special-dish rotation: A → B → C → D → E → A → B → ..., repeating cyclically forever (day `n` continues right where day `0` left off — the schedule never resets). Every day, students report a satisfaction delta for that day's special dish: positive if they liked it more than the regular menu, negative if less. Find the maximum sum achievable over any contiguous streak of days, where a streak is allowed to wrap around from the end of the log back to the beginning, since the rotation itself doesn't stop where your log happens to end.
+The 5 IISc messes — A, B, C, D, E — follow a fixed weekly special-dish rotation: A → B → C → D → E → A → B → ..., repeating every 5 days for the whole semester. Every day, students report a satisfaction delta for that day's special dish: positive if they liked it more than the regular menu, negative if less. Find the maximum sum achievable over any contiguous streak of days (a "streak" means consecutive days, no skipping).
 
-Formally: given an array `delta[n]`, find `max(delta[i] + delta[i+1] + ... + delta[j])` over all valid streaks, where a streak may either be a normal contiguous range `[i, j]` (`i <= j`), or a wrapping range covering `[i, n-1] + [0, j]` (`j < i`). A streak must be non-empty, and cannot span the entire array wrapped all the way around (i.e., it cannot include every element twice).
+Formally: given an array `delta[n]`, find `max(delta[i] + delta[i+1] + ... + delta[j])` over all valid ranges `0 <= i <= j <= n-1`. A streak must be non-empty (you must pick at least one day).
 
 **Input:** Single array — `delta[i]` is the satisfaction delta for day `i`.
 
@@ -18,9 +18,9 @@ Formally: given an array `delta[n]`, find `max(delta[i] + delta[i+1] + ... + del
 **Sample 1**
 ```
 Input: delta=[3,-1,2,-5,4]
-Output: 8
+Output: 4
 ```
-Explanation: Wrapping the streak — day E (`4`) followed by days A, B, C (`3, -1, 2`) — gives `4+3-1+2 = 8`
+Explanation: The best streak is days A, B, C — `[3, -1, 2]` — summing to `4`. Extending further to include day D (`-5`) or starting fresh at day E (`4`, sum `4`, tied but not better) doesn't beat it.
 
 **Sample 2**
 ```
