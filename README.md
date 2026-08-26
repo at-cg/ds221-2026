@@ -33,30 +33,24 @@ Explanation: The best streak is just the single least-negative day, `[-1]`, givi
 
 ## Question 2: Deepest Twin Leaf Depth
 
-### Definitions
+Consider a binary tree where each node holds an integer value. For any leaf in the tree, define its **path sequence** as the list of values encountered from the root down to that leaf, in order.
 
-For any leaf, its **path sequence** = the list of values from root down to that leaf, in order.
+Two leaves at the *same depth* are called **Twins** if:
 
-Two leaves at the **same depth** are **Twins** if:
-1. Their path sequences are **anagrams** of each other (same multiset of values), **and**
-2. Their path sequences are **not identical** — they must differ in order at some position.
+1. Their path sequences are anagrams of each other (i.e., the same multiset of values), and
+2. Their path sequences are not identical — they must differ in order at some position.
 
-*(A leaf pair with the exact same sequence, same order, is not a twin pair — they're just duplicates)*
+Your task is to find the **maximum depth** (root = depth 0) at which at least one twin pair exists anywhere in the tree.
 
-### Problem Description
+**Input:** `root` — a level-order array representation of the tree, with `null` for missing children.
 
-Return the **maximum depth** (root = depth 0) at which any twin pair exists. Return `-1` if no twin pair exists anywhere in the tree.
+**Output:** Single integer — the maximum depth at which a twin pair exists, or `-1` if no twin pair exists anywhere in the tree.
 
+**Constraints**
 
-**Input :** `root` — level-order array with `null` for missing children.
-
-**Output:** Single integer — max depth with a twin pair, or `-1`.
-
-### Constraints
-
-- `1 <= nodes <= 10^4`
-- `-10^4 <= Node.val <= 10^4`
-- height `<= 1000`
+* `1 <= nodes <= 10^4`
+* `-10^4 <= Node.val <= 10^4`
+* `height <= 1000`
 
 ### Sample Test Cases
 
@@ -82,6 +76,17 @@ Output: 3
 Explanation: Leaves: `[1,2,3]` & `[1,3,2]` (depth 2, twins) and `[1,2,3,7]` & `[1,3,2,7]` (depth 3, twins — multiset `{1,2,3,7}` both, order differs). Both depths qualify → return the deeper one, **3**.
 
 Note: If there is, say, only one leaf at the deepest level, but valid pair one level shallower, you must not return `-1` just because the deepest level has an unpaired leaf.
+
+Hints:
+
+Hint 1 — How do you tell "same multiset" quickly?
+When you walk from the root down to a leaf, you get a list of numbers (the path). To check if two paths are anagrams of each other, you don't need to compare them directly — you can just **sort each path** and compare the sorted versions. (If two sorted paths are equal, the original paths must have the same numbers, just possibly in a different order.)
+
+Hint 2 — Group leaves so you're not comparing everyone to everyone.
+Instead of comparing every pair of leaves in the whole tree, put each leaf into a "bucket" based on its `(depth, sorted path)`. Any two leaves in the *same* bucket automatically have the same multiset.
+
+Hint 3 — Inside one bucket, how do you check "different order"?
+Within a bucket, look at the **original (unsorted) paths**. If two leaves in the same bucket have the *exact same* original path, they're just duplicates of each other — not twins.
 
 ## Question 3: Disaster Relief Convoy
 
