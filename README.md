@@ -126,7 +126,6 @@ Along with your source code, you must submit a brief technical report containing
 * **Empirical Runtime:** Execution time on provided test cases (in seconds).
 * **Theoretical Analysis:** Time and space complexity in Big-O notation.
 * **Optimization:** Is it possible to achieve an asymptotically faster runtime? If no, explain why. If yes, explain or implement the optimal approach.
-* **AI/Copilot Log:** A brief summary of how you utilized LLMs or Copilot. What prompts failed? Where did the AI get stuck?
 
 ### Constraints
 
