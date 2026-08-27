@@ -101,37 +101,37 @@ The robot must pick up packages from the conveyor belt (which acts as a **Queue*
 1. Travel to the top package's destination and deliver that one first (even if it's further away).
 2. Travel to a designated **Sorting Room**. In a Sorting Room, the robot can temporarily unload its stack onto a table and reload the packages in any order it chooses.
 
-Your task is to write an algorithm that calculates the **minimum total time** required for the robot to load and deliver all packages.
+Your task is to write an algorithm that calculates the **minimum total time** required for the robot to load and deliver all packages. *(Assume the graph to be connected).*
 
 **The Rules & Mechanics:**
 * **The Building:** The office is an undirected graph of rooms (nodes) connected by hallways (edges). Each hallway has a travel time (weight).
 * **The Arrival Room:** Node `0` is always the Arrival Room. The robot loads packages and starts delivery from here.
 * **Loading:** Loading takes `1` unit of time per package. The first package loaded from the queue goes to the bottom of the stack; the last package loaded stays on top.
-* **Delivering:** Delivering takes `0` units of time. The robot can only drop off a package if it is in the correct room AND that package is currently at the top of the stack. 
-* **Sorting:** Navigating to a Sorting Room and rearranging the stack takes a fixed time penalty of `S` units of time, regardless of how many packages are in the stack.
+* **Delivering:** Delivering takes `0` units of time after reaching the room. The robot can only drop off a package if it is in the correct room (i.e. the room for which the current package is designated) AND that package is currently at the top of the stack.
+* **Sorting:** Navigating to the Sorting Room and rearranging the stack takes a fixed time penalty of `S` units of time, regardless of how many packages are in the stack.
 * **Completion:** The task is complete when all packages in the bin have been delivered.
 
 ### Input Format
 Read from a standard text file with the following structure:
-* **Line 1:** Four integers `N E C S` (Total rooms, Number of hallways, Max stack capacity, Sorting time penalty).
+* **Line 1:** Four integers `N E C S` (Total rooms, Number of hallways, Number of packages to be delivered, Sorting time penalty).
 * **Next E lines:** Three integers `u v w` representing a hallway between room `u` and room `v` with a travel time of `w`.
-* **Next Line:** An integer `K`, followed by `K` integers representing the IDs of the Sorting Rooms.
-* **Next Line:** An integer `Q` (total packages on the belt), followed by `Q` integers representing the destination room IDs for the packages, in the exact order they sit on the conveyor belt. *(Assume `Q <= C`, so all packages fit in the bin).*
+* **Next Line:** An integer `K` representing the ID of the Sorting Room.
+* **Next Line:** `C` integers representing the destination room IDs for the packages, in the exact order they sit on the conveyor belt i.e. first package on conveyer belt is the first element on queue. *(Assume all packages fit in the bin at once and there is atmost one package for each room).*
 
 ### Output Format
 * **Minimum Total Time:** A single integer representing the fastest possible time to load and complete all deliveries.
 
 ### Deliverables to Report
 Along with your source code, you must submit a brief technical report containing:
-* **Empirical Runtime:** Execution time on provided test cases (in seconds).
+* **Empirical Runtime:** Execution time analysis by varying the graph size.
 * **Theoretical Analysis:** Time and space complexity in Big-O notation.
 * **Optimization:** Is it possible to achieve an asymptotically faster runtime? If no, explain why. If yes, explain or implement the optimal approach.
 
 ### Constraints
 
-* $1 \le N \le 500$
-* $1 \le E \le 2000$
-* $1 \le Q \le 10$
+* $2 \le N \le 500$
+* $2 \le E \le 2000$
+* $1 \le C \le 10$
 * $0 \le S, w \le 1000$
 
 ### Sample Test Cases
@@ -139,12 +139,19 @@ Along with your source code, you must submit a brief technical report containing
 **Sample 1**
 ```text
 Input:
-4 3 5 2
+4 3 3 2
 0 1 10
 0 2 10
 1 3 10
-1 0
-3 1 2 3
+0
+1 2 3
 
 Output:
 45
+
+Explaination:
+Loading 3 packages takes: 3
+Sorting on node 0 takes: 2 [sorted as: 2,1,3 (top to bottom on stack)]
+Delivery takes: 10 + 20 + 10 = 40
+Total time: 45
+
