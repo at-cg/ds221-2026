@@ -41,7 +41,7 @@ All functions you write should be added to the `user_code.h` file. You must adhe
 
 You are strongly encouraged to start the assignment early and make steady progress each week. We recommend using GitHub to maintain regular checkpoints of your work and track your code changes. While using GitHub, your repository must remain private. Periodically push your code to GitHub. Excuses like *my laptop crashed and I lost my code* will not be accepted.
 
-In your final code submission, do not print anything to the console from the code you write.
+In the final version of your code that you will submit, avoid printing anything to the console.
 
 ## SUBMISSION INSTRUCTIONS
 
