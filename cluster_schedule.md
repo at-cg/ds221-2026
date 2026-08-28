@@ -1,6 +1,6 @@
 # Cluster Schedule
 
-Nodes available for this assignment: **Node 5, Node 6, Node 7, Node 8** (4 nodes).
+Nodes available for this assignment(debug partition): **Node 5, Node 6, Node 7, Node 8** (4 nodes).
 
 Every student gets **7 equal turns** on the cluster: 6 turns of 4 hours each, plus 1 final shorter turn of 1h 45m, so the rotation finishes before the assignment deadline without giving anyone an extra turn.
 
