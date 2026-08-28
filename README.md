@@ -128,6 +128,14 @@ Read from a standard text file with the following structure:
 * $1 \le C \le 10$
 * $0 \le S, w \le 1000$
 
+### Hints: Automated Mailroom Robot
+
+**Hint 1:** Calculating all-pair shortest paths may be useful, if you look at the small number of packages, you might realize you only need the distances between a few key rooms.
+
+**Hint 2:** Think about how the stack (LIFO) naturally reverses your default delivery order. Also, ask yourself if going to the sorting room a second time would ever actually help.
+
+**Hint 3:** Since there are at most 10 packages (C <= 10), consider if the number of possible delivery combinations after a sort is small enough that you can just try all of them.
+
 ### Sample Test Cases
 
 **Sample 1**
