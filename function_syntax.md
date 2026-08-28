@@ -43,7 +43,7 @@ $\textbf{Input:}$
   - Follows the usual convention: a missing node does **not** contribute
     placeholder entries for its own children in the listing (e.g.
     `[1, 2, 3, 3, NULL_NODE, NULL_NODE, 2]` means node `1` has children `2, 3`;
-    node `2` (index 1) has no children listed; node `3` (index 2) has children
+    node `2` has children `3, NULL_NODE`; node `3` has children
     `NULL_NODE, 2`)
 
 $\textbf{Input constraints:}$
