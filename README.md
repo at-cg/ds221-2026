@@ -5,6 +5,25 @@
 * **Posted on 28-08-2026**
 * **Due on 26-09-2026 11:59 PM** (No extension will be granted)
 
+## Table of Contents
+
+| File / Folder | Description |
+| --- | --- |
+| [README.md](README.md) | This file — instructions, questions, and grading |
+| [function_syntax.md](function_syntax.md) | Function signatures and input/output format for each question |
+| [user_code.h](user_code.h) | **Starter file — write your solutions here** |
+| [main.cpp](main.cpp) | Driver program that reads input, calls your functions, times them, and writes output (do not modify) |
+| [file_reader.h](file_reader.h) | Input file parsing helpers (do not modify) |
+| [file_writer.h](file_writer.h) | Output file writing helpers (do not modify) |
+| [sample_test/](sample_test/) | Sample input/output files for sanity-checking your solution |
+| ├─ [Question_1/](sample_test/Question_1/) | Sample `input.txt` / `output.txt` for Q1 (Mess Rotation Streak) |
+| ├─ [Question_2/](sample_test/Question_2/) | Sample `input.txt` / `output.txt` for Q2 (Deepest Twin Leaf Depth) |
+| └─ [Question_3/](sample_test/Question_3/) | Sample `input.txt` / `output.txt` for Q3 (Automated Mailroom Robot) |
+| [cluster_usage_instructions.md](cluster_usage_instructions.md) | How to log in to and use the teaching cluster |
+| [cluster_schedule.md](cluster_schedule.md) | Your assigned time slot(s) on the cluster |
+| [example_script.sh](example_script.sh) | Example SLURM job script template |
+
+
 ## INSTRUCTIONS
 All problems must be solved using C++ and compile/execute correctly on the [teaching cluster](cluster_usage_instructions.md). You may test and debug on your local machine, but the final evaluation will be done on the cluster. 
 
