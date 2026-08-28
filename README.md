@@ -39,8 +39,6 @@ You are provided a `main.cpp` file which calls helper functions for tasks such a
 
 All functions you write should be added to the `user_code.h` file. You must adhere to the function signatures specified in `user_code.h`. You are allowed to add additional helper functions to `user_code.h` if necessary, as long as the main function signatures remain unchanged.
 
-You are encouraged to start assignment early and make weekly progress. Use of GitHub for checkpointing your daily progress is strongly encouraged. While using GitHub, you must keep your code private. Excuses like `my laptop crashed and I lost my code` will not be entertained. 
-
 You are strongly encouraged to start the assignment early and make steady progress each week. We recommend using GitHub to maintain regular checkpoints of your work and track your code changes. While using GitHub, your repository must remain private. Periodically push your code to GitHub. Excuses like *my laptop crashed and I lost my code* will not be accepted.
 
 In your final code submission, do not print anything to the console from the code you write.
