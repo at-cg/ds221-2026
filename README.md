@@ -29,7 +29,7 @@ All problems must be solved using C++ and compile/execute correctly on the [teac
 
 All performance numbers given in your report should be on compute nodes of the cluster. Profiling experiments should be run during your assigned timeslot to avoid performance interference. TAs should be able to reproduce your performance results.
 
-AI tools may be used for coding assistance. However, students with limited programming experience are encouraged to develop their programming skills and code without use of AI tools. If you use AI tools while developing your code, you must acknowledge their use in your report. Using AI tools is NOT allowed for preparing the report. 
+AI tools may be used for coding assistance. However, students with limited programming experience are encouraged to develop their programming skills and code without use of AI tools. If you use AI tools while developing your code, you must acknowledge their use in your report. The report associated with this assignment must be written in your own words. 
 
 Your understanding of any line in your code, your algorithms and data structures, your design choices will be tested during **oral viva conducted by the TAs**. Therefore, you are strongly encouraged to independently think and design the overall algorithm. You should critically evaluate alternative approaches on your own. Expect a few conceptual questions related to this assignment in written exams.   
 
