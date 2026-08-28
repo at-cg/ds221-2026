@@ -39,7 +39,7 @@ function returns $-1$.
 $\textbf{Input:}$
 - $\texttt{root}$ : vector of integers representing the standard level-order
   (BFS) serialization of the binary tree
-  - A missing child (`null`) is represented by the sentinel value \texttt{NULL\_NODE} = -100000, which lies outside the valid node-value range $[-10^{4}, 10^{4}]$, so it can never be confused with a real value
+  - A missing child (`null`) is represented by the sentinel value $NULL\_NODE$ = -100000, which lies outside the valid node-value range $[-10^{4}, 10^{4}]$, so it can never be confused with a real value
   - Follows the usual convention: a missing node does **not** contribute
     placeholder entries for its own children in the listing (e.g.
     `[1, 2, 3, 3, NULL_NODE, NULL_NODE, 2]` means node `1` has children `2, 3`;
