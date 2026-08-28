@@ -118,8 +118,6 @@ Output: -1
 ```
 Explanation: The best streak is just the single least-negative day, `[-1]`, giving `-1`.
 
----
-
 #### Grading  
 - 2 marks for profiling and report  
 - 2 marks for code and viva  
