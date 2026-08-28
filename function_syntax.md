@@ -41,13 +41,16 @@ identical in order — a **twin pair**. If no twin pair exists at any depth, the
 function returns $-1$.
 
 $\textbf{Input:}$
-- $\texttt{root}$ : vector of `optional<int>` representing the standard
-  level-order (BFS) serialization of the binary tree
-  - $\texttt{root[i]} = \texttt{nullopt}$ denotes a missing child (`null`)
+- $\texttt{root}$ : vector of integers representing the standard level-order
+  (BFS) serialization of the binary tree
+  - A missing child (`null`) is represented by the sentinel value
+    $\texttt{NULL\_NODE} = -100000$, which lies outside the valid node-value
+    range $[-10^{4}, 10^{4}]$, so it can never be confused with a real value
   - Follows the usual convention: a missing node does **not** contribute
     placeholder entries for its own children in the listing (e.g.
-    `[1,2,3,3,null,null,2]` means node `1` has children `2,3`; node `2` (index 1)
-    has no children listed; node `3` (index 2) has children `null, 2`)
+    `[1, 2, 3, 3, NULL_NODE, NULL_NODE, 2]` means node `1` has children `2, 3`;
+    node `2` (index 1) has no children listed; node `3` (index 2) has children
+    `NULL_NODE, 2`)
 
 $\textbf{Input constraints:}$
 - $1 \leq \texttt{nodes} \leq 10^{4}$, where $\texttt{nodes}$ is the number of
@@ -62,12 +65,16 @@ $\textbf{Output:}$
 **Function Signature:**
 
 ```cpp
-int question_two(const vector<optional<int>>& root);
+const int NULL_NODE = -100000;  // sentinel value denoting a missing child
+
+int question_two(const vector<int>& root);
 ```
 
-*Note: `optional<int>` requires `#include <optional>` (C++17). You are free to
-first reconstruct an explicit tree structure (e.g. with a `TreeNode` struct)
-from `root` inside `user_code.h` before running your algorithm.*
+*Note: `NULL_NODE` is provided as a constant so every entry of `root` is a
+plain `int`, and any entry equal to `NULL_NODE` should be treated as a missing
+node. You are free to first reconstruct an explicit tree structure (e.g. with
+a `TreeNode` struct) from `root` inside `user_code.h` before running your
+algorithm.*
 
 <br><br>
 
