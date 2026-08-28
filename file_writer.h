@@ -8,49 +8,38 @@
 #include <string>
 
 
-void question1_writer(const std::string& file_path, const std::vector<std::vector<int>>& output) {
-    std::ofstream fout(file_path);  // open file for writing
+// Question 1: writes the maximum streak sum
+void question1_writer(const std::string& file_path, long long output) {
+    std::ofstream fout(file_path);
     if (!fout.is_open()) {
         std::cerr << "Error: Could not open file " << file_path << std::endl;
         return;
     }
 
-    fout << "id,weight\n";  // header (optional)
-
-    for (const auto& row : output) {
-        for (size_t i = 0; i < row.size(); i++) {
-            fout << row[i];
-            if (i != row.size() - 1) fout << ","; // add commas between values
-        }
-        fout << "\n";  // new line for each row
-    }
+    fout << output << "\n";
 
     fout.close();
-    std::cout << "Output written to " << file_path << std::endl;
 }
 
 
 
-// Function to write a vector<int> to file
-void question2_writer(const std::string &file_path, const std::vector<int> &vec) {
+// Question 2: writes the deepest twin-leaf depth (or -1)
+void question2_writer(const std::string& file_path, int output) {
     std::ofstream fout(file_path);
     if (!fout.is_open()) {
         std::cerr << "Error opening file for writing: " << file_path << std::endl;
         return;
     }
 
-    for (size_t i = 0; i < vec.size(); i++) {
-        fout << vec[i];
-        if (i != vec.size() - 1) fout << " "; // space separated
-    }
-    fout << "\n";
+    fout << output << "\n";
+
     fout.close();
 }
 
 
 
-// Function to write a single integer to file
-void question3_writer(const std::string &file_path, int value) {
+// Question 3: writes the minimum total time for the mailroom robot
+void question3_writer(const std::string& file_path, long long value) {
     std::ofstream fout(file_path);
     if (!fout.is_open()) {
         std::cerr << "Error opening file for writing: " << file_path << std::endl;
