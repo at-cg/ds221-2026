@@ -1,8 +1,8 @@
 # Cluster Schedule
 
-Nodes available for this assignment(debug partition): **Node 5, Node 6, Node 7, Node 8** (4 nodes).
+Nodes available for this assignment: **Node 5, Node 6, Node 7, Node 8** (4 nodes).
 
-Every student gets **7 equal turns** on the cluster: 6 turns of 4 hours each, plus 1 final shorter turn of 1h 45m, so the rotation finishes before the assignment deadline without giving anyone an extra turn.
+Every student gets **7 equal turns** on the cluster: 6 turns of 4 hours each (29 Aug -- 24 Sep 08:00), plus 1 final shorter turn of 2h 15m (24 Sep 08:00 onward), so the rotation finishes well before the assignment deadline without giving anyone an extra turn.
 
 
 ### 29 August, 2026
@@ -296,40 +296,35 @@ Every student gets **7 equal turns** on the cluster: 6 turns of 4 hours each, pl
 | Time Slot | Node 5 | Node 6 | Node 7 | Node 8 |
 | --- | --- | --- | --- | --- |
 | 12:00 am to 03:59 am | Devraj Karmakar | Anantapur Anugya | Sehaj Ganjoo | Nido Yamen |
-| 04:00 am to 07:59 am | Aryan Verma | Sanchit Jain |  |  |
-| 08:00 am to 11:59 am |  |  |  |  |
-| 12:00 pm to 03:59 pm |  |  |  |  |
-| 04:00 pm to 07:59 pm |  |  |  |  |
-| 08:00 pm to 11:59 pm |  |  |  |  |
+| 04:00 am to 07:59 am | Aryan Verma | Sanchit Jain | Gaddam Sai Manasvi | Kartikeya Gaur |
 
-### Final Round — 25 September, 2026 onward (shortened 105 min turns)
+### Final Round -- 24 September, 2026, 08:00 onward (shortened 135 min turns)
 
 | Slot | Start | End | Node 5 | Node 6 | Node 7 | Node 8 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 25 Sep, 00:00 | 25 Sep, 01:45 | Gaddam Sai Manasvi | Kartikeya Gaur | Paul Binu | Medhe Aditya Laxmikant |
-| 2 | 25 Sep, 01:45 | 25 Sep, 03:30 | Chetna Pant | Yogangi Tiwari | Kondapalli Aditya Sai | Jeevesh Sharma |
-| 3 | 25 Sep, 03:30 | 25 Sep, 05:15 | Arjun Ramchandra Ghanwat | Debayan Ghosh | Aditya Raman | Hardik Chunara |
-| 4 | 25 Sep, 05:15 | 25 Sep, 07:00 | M Lasya Priya | Ganesh Potnuru | Mitnala Siva Jyothiradithya | Yakshith Maddineni |
-| 5 | 25 Sep, 07:00 | 25 Sep, 08:45 | Krishna Gupta | Sudarshana Chaitanya B N | Debarthi Pal | Smit Patel |
-| 6 | 25 Sep, 08:45 | 25 Sep, 10:30 | Gantavya Sharma | Monalisa Roy | Podilapu Gnaneswar | Addepalli Pavan Kumar |
-| 7 | 25 Sep, 10:30 | 25 Sep, 12:15 | Khwmtha Basumatary | Kriti Chaudhari | Shruti Kolachana | Atharva Santosh Hingane |
-| 8 | 25 Sep, 12:15 | 25 Sep, 14:00 | Prajjwal Saxena | Guttapati Sai Anirudh | Rajarshi Bhattacharjee | sankalp patel |
-| 9 | 25 Sep, 14:00 | 25 Sep, 15:45 | Amit Kumar Jha | Sharanya Marathe | Aditya Barodia | P Nihal Srivatsav |
-| 10 | 25 Sep, 15:45 | 25 Sep, 17:30 | Harish Gurjar | Tirthankar Mazumder | Juhitha Radha Vegesna | Ankur Singh |
-| 11 | 25 Sep, 17:30 | 25 Sep, 19:15 | Aniruth A L | Amitesh Pandey | Himanshu Kumar | Shreya Ghosh |
-| 12 | 25 Sep, 19:15 | 25 Sep, 21:00 | Kareena | Ajinkya Gawali | Sagnika Mukhopadhyay | Eluru Sai Venkat |
-| 13 | 25 Sep, 21:00 | 25 Sep, 22:45 | Harsh Airan | Suraj S | Naik Tanushri Ganesh | Shreyas Dharmatti |
-| 14 | 25 Sep, 22:45 | 26 Sep, 00:30 | Shreemayi D | S Kredai Raaman | Rajat Mohan Yadav | S Sruthi Sagar |
-| 15 | 26 Sep, 00:30 | 26 Sep, 02:15 | PATEL BHAVDIPKUMAR VINUBHAI | Anindya Bhaumik | Jyothika Patcha | Manisha Chaurasia |
-| 16 | 26 Sep, 02:15 | 26 Sep, 04:00 | Yuvaraj DC | Nithish Y H | Abhishek Pandey | Garima Papnai |
-| 17 | 26 Sep, 04:00 | 26 Sep, 05:45 | Jayesh | Moksha Pathak | Kshitij Pratihast | Lekhya PillariKuppam |
-| 18 | 26 Sep, 05:45 | 26 Sep, 07:30 | Dewansh Gautam | nilesh kumar | Subhom Mahalik | Shah Chandan Sunil |
-| 19 | 26 Sep, 07:30 | 26 Sep, 09:15 | Adarsh Pandey | Faheem Muhammad O | Niladri Sekhar Mondal | Devarasetty Sai Krishna Vamshi |
-| 20 | 26 Sep, 09:15 | 26 Sep, 11:00 | Sejadri Banik | Riyaz Ahmad | Anandita Mishra | Harsh Kumar Saxena |
-| 21 | 26 Sep, 11:00 | 26 Sep, 12:45 | Kanthala Sai Sandesh Reddy | Rupnur Premal Lobhaji | Rajeev K R | Komarala Swetha Sri |
-| 22 | 26 Sep, 12:45 | 26 Sep, 14:30 | Ankit Kumar Prem | Koyye Rahul | Manthan Panwar | Debmalya Hembram |
-| 23 | 26 Sep, 14:30 | 26 Sep, 16:15 | R | Soham Bhandary | Alin Anto | Atharva Sharad Jagtap |
-| 24 | 26 Sep, 16:15 | 26 Sep, 18:00 | Vismita Tej | Aryan Singh Sisodiya | Anushka Dassi | Krishna Bhikadiya Bhaveshbhai |
-| 25 | 26 Sep, 18:00 | 26 Sep, 19:45 | Chinmay Pendam | Devashish Dhaulakhandi | Ayush Saxena | Devraj Karmakar |
-| 26 | 26 Sep, 19:45 | 26 Sep, 21:30 | Anantapur Anugya | Sehaj Ganjoo | Nido Yamen | Aryan Verma |
-| 27 | 26 Sep, 21:30 | 26 Sep, 23:15 | Sanchit Jain |  |  |  |
+| 1 | 24 Sep, 08:00 | 24 Sep, 10:15 | Paul Binu | Medhe Aditya Laxmikant | Chetna Pant | Yogangi Tiwari |
+| 2 | 24 Sep, 10:15 | 24 Sep, 12:30 | Kondapalli Aditya Sai | Jeevesh Sharma | Arjun Ramchandra Ghanwat | Debayan Ghosh |
+| 3 | 24 Sep, 12:30 | 24 Sep, 14:45 | Aditya Raman | Hardik Chunara | M Lasya Priya | Ganesh Potnuru |
+| 4 | 24 Sep, 14:45 | 24 Sep, 17:00 | Mitnala Siva Jyothiradithya | Yakshith Maddineni | Krishna Gupta | Sudarshana Chaitanya B N |
+| 5 | 24 Sep, 17:00 | 24 Sep, 19:15 | Debarthi Pal | Smit Patel | Gantavya Sharma | Monalisa Roy |
+| 6 | 24 Sep, 19:15 | 24 Sep, 21:30 | Podilapu Gnaneswar | Addepalli Pavan Kumar | Khwmtha Basumatary | Kriti Chaudhari |
+| 7 | 24 Sep, 21:30 | 24 Sep, 23:45 | Shruti Kolachana | Atharva Santosh Hingane | Prajjwal Saxena | Guttapati Sai Anirudh |
+| 8 | 24 Sep, 23:45 | 25 Sep, 02:00 | Rajarshi Bhattacharjee | sankalp patel | Amit Kumar Jha | Sharanya Marathe |
+| 9 | 25 Sep, 02:00 | 25 Sep, 04:15 | Aditya Barodia | P Nihal Srivatsav | Harish Gurjar | Tirthankar Mazumder |
+| 10 | 25 Sep, 04:15 | 25 Sep, 06:30 | Juhitha Radha Vegesna | Ankur Singh | Aniruth A L | Amitesh Pandey |
+| 11 | 25 Sep, 06:30 | 25 Sep, 08:45 | Himanshu Kumar | Shreya Ghosh | Kareena | Ajinkya Gawali |
+| 12 | 25 Sep, 08:45 | 25 Sep, 11:00 | Sagnika Mukhopadhyay | Eluru Sai Venkat | Harsh Airan | Suraj S |
+| 13 | 25 Sep, 11:00 | 25 Sep, 13:15 | Naik Tanushri Ganesh | Shreyas Dharmatti | Shreemayi D | S Kredai Raaman |
+| 14 | 25 Sep, 13:15 | 25 Sep, 15:30 | Rajat Mohan Yadav | S Sruthi Sagar | PATEL BHAVDIPKUMAR VINUBHAI | Anindya Bhaumik |
+| 15 | 25 Sep, 15:30 | 25 Sep, 17:45 | Jyothika Patcha | Manisha Chaurasia | Yuvaraj DC | Nithish Y H |
+| 16 | 25 Sep, 17:45 | 25 Sep, 20:00 | Abhishek Pandey | Garima Papnai | Jayesh | Moksha Pathak |
+| 17 | 25 Sep, 20:00 | 25 Sep, 22:15 | Kshitij Pratihast | Lekhya PillariKuppam | Dewansh Gautam | nilesh kumar |
+| 18 | 25 Sep, 22:15 | 26 Sep, 00:30 | Subhom Mahalik | Shah Chandan Sunil | Adarsh Pandey | Faheem Muhammad O |
+| 19 | 26 Sep, 00:30 | 26 Sep, 02:45 | Niladri Sekhar Mondal | Devarasetty Sai Krishna Vamshi | Sejadri Banik | Riyaz Ahmad |
+| 20 | 26 Sep, 02:45 | 26 Sep, 05:00 | Anandita Mishra | Harsh Kumar Saxena | Kanthala Sai Sandesh Reddy | Rupnur Premal Lobhaji |
+| 21 | 26 Sep, 05:00 | 26 Sep, 07:15 | Rajeev K R | Komarala Swetha Sri | Ankit Kumar Prem | Koyye Rahul |
+| 22 | 26 Sep, 07:15 | 26 Sep, 09:30 | Manthan Panwar | Debmalya Hembram | R | Soham Bhandary |
+| 23 | 26 Sep, 09:30 | 26 Sep, 11:45 | Alin Anto | Atharva Sharad Jagtap | Vismita Tej | Aryan Singh Sisodiya |
+| 24 | 26 Sep, 11:45 | 26 Sep, 14:00 | Anushka Dassi | Krishna Bhikadiya Bhaveshbhai | Chinmay Pendam | Devashish Dhaulakhandi |
+| 25 | 26 Sep, 14:00 | 26 Sep, 16:15 | Ayush Saxena | Devraj Karmakar | Anantapur Anugya | Sehaj Ganjoo |
+| 26 | 26 Sep, 16:15 | 26 Sep, 18:30 | Nido Yamen | Aryan Verma | Sanchit Jain |  |
