@@ -1,3 +1,69 @@
+# DS221 (Sep 2026) Assignment 1
+
+## Total Points: 15
+
+* **Posted on 28-08-2026**
+* **Due on 26-09-2026 11:59 PM** (No extension will be granted)
+
+## INSTRUCTIONS
+All problems must be solved using C++ and compile/execute correctly on the [teaching cluster](cluster_usage_instructions.md). You may test and debug on your local machine, but the final evaluation will be done on the cluster. 
+
+All performance numbers given in your report should be on compute nodes of the cluster. Profiling experiments should be run during your assigned timeslot to avoid performance interference. We should be able to reproduce your performance results.
+
+You are required to actively use Copilot to solve the programming part of the problem, to generate the solution code, and to test code. You are responsible for checking the accuracy of the code, including edge cases.
+
+You MUST NOT collaborate with other students or take help from other (non-Copilot) online sources to solve any part of the problem, including code, prompts, algorithms, time/space complexity, etc. You must keep your answers inaccessible to other students.
+
+You are provided a `main.cpp` file which calls helper functions for tasks such as file reading and writing output to a file. By default, this uses the sample input and output provided by us. You can edit the file paths in `main.cpp` if you need to change the input files. You must not change anything else in `main.cpp`. We will run our own test cases using this file, so any modifications beyond the allowed changes could affect your evaluation. You are also not allowed to change the other files used for file operations (`file_writer.h`, `file_reader.h`).
+
+All functions you write should be added to the `user_code.h` file. You must adhere to the function signatures specified in `user_code.h`. You are allowed to add additional helper functions to `user_code.h` if necessary, as long as the main function signatures remain unchanged.
+
+DO NOT PRINT ANYTHING TO THE CONSOLE from code you write in the final submission. Your code will be auto-graded. Any deviation from instructions will cause grading to fail and you will get zero points.
+
+## SUBMISSION INSTRUCTIONS
+
+Please submit a zipped file `iischandle.zip` where you replace `iischandle` with the prefix of your IISc email (e.g., `parveshbarak` if your IISc email is `parveshbarak@iisc.ac.in`). Inside this zip file, you will have a single folder named `iischandle/`, and within this folder include exactly two files:  
+  1. `user_code.h` – This file should contain all of your code.  
+  2. `iischandle.pdf` – This file should include your experimental setup, observations and analysis, plots, and any other required documentation and acknowledgements.  
+
+So the file structure should look like this:  
+```
+iischandle.zip
+|--iischandle\
+   |-- user_code.h
+   |-- iischandle.pdf
+```
+**Any deviation from the specified file or folder names, or failure to follow the instructions for completing the assignment, *will* result in a penalty.**
+
+-----------------------------------------------------------------------------------------------------------------------
+
+## Report Instructions
+Your report should include at least the following sections (you may add more if needed):
+- Solution Approach
+  - A clear explanation of the algorithm(s) used to solve the problem.
+  - Include step-by-step reasoning behind the chosen method.
+  - Provide diagrams or examples where helpful.
+- Time and Space Complexity Analysis
+  - Analyze best case, worst case, and average case scenarios.
+  - Provide both theoretical analysis and practical justification.
+- Experimental Setup
+  - Describe the setups and different variables you choose for experiments with reasoning
+- Empirical Observations
+  - Report time taken and memory usage of your algorithm based on experimental runs.
+  - Present results in tabular or graphical format for clarity.
+  - Compare empirical results with theoretical expectations.
+  - Discuss scalability (how the algorithm performs as input size increases).
+  - Detailed Analysis with Different Algorithmic Approaches if more than one tried
+    - Provide time and space complexity for each approach.
+    - Justify why you chose the final implementation over the alternatives.
+- Additional Insights (Optional but Recommended)
+  - For example: Mention possible optimizations and trade-offs.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+## QUESTIONS
+-----------------------------------------------------------------------------------------------------------------------
+
 ## Question 1: Mess Rotation Streak
 
 The 5 IISc messes — A, B, C, D, E — follow a fixed weekly special-dish rotation: A → B → C → D → E → A → B → ..., repeating every 5 days for the whole semester. Every day, students report a satisfaction delta for that day's special dish: positive if they liked it more than the regular menu, negative if less. Find the maximum sum achievable over any contiguous streak of days (a "streak" means consecutive days, no skipping).
@@ -30,6 +96,15 @@ Output: -1
 Explanation: The best streak is just the single least-negative day, `[-1]`, giving `-1`.
 
 ---
+
+#### Grading  
+- 1 mark for code  
+- 2 marks for profiling and report  
+- 1 mark for viva  
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
 
 ## Question 2: Deepest Twin Leaf Depth
 
@@ -87,6 +162,16 @@ Instead of comparing every pair of leaves in the whole tree, put each leaf into 
 
 Hint 3 — Inside one bucket, how do you check "different order"?
 Within a bucket, look at the **original (unsorted) paths**. If two leaves in the same bucket have the *exact same* original path, they're just duplicates of each other — not twins.
+
+#### Grading  
+- 1 mark for code  
+- 2 marks for profiling and report  
+- 1 mark for viva  
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
 
 ## Question 3: Automated Mailroom Robot
 
@@ -156,4 +241,9 @@ Loading 3 packages takes: 3
 Sorting on node 0 takes: 2 [sorted as: 2,1,3 (top to bottom on stack)]
 Delivery takes: 10 + 20 + 10 = 40
 Total time: 45
+
+#### Grading  
+- 3 marks for code  
+- 3 marks for profiling and report  
+- 1 mark for viva  
 
