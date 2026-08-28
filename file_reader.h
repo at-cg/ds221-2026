@@ -11,7 +11,11 @@
 #include <chrono>
 using namespace std;
 
-void question1_reader(const string& filename, vector<vector<int>>&data) {
+// Question 1: Mess Rotation Streak
+// File format:
+//   line 1        : n
+//   line 2        : delta[0] delta[1] ... delta[n-1]
+void question1_reader(const string& filename, vector<int>& delta) {
     ifstream file(filename);
 
     if (!file.is_open()) {
@@ -19,47 +23,65 @@ void question1_reader(const string& filename, vector<vector<int>>&data) {
         return;
     }
 
-    string line;
-    bool headerSkipped = false;
-
-    while (getline(file, line)) {
-        if (!headerSkipped) {  
-            // skip the header (first line)
-            headerSkipped = true;
-            continue;
-        }
-
-        if (line.empty()) continue;  // skip empty lines
-
-        stringstream ss(line);
-        string item;
-        vector<int> row;
-
-        while (getline(ss, item, ',')) {
-            if (!item.empty()) {  // avoid trailing commas
-                row.push_back(stoi(item));
-            }
-        }
-
-        if (!row.empty()) {
-            data.push_back(row);
-        }
+    int n;
+    file >> n;
+    delta.resize(n);
+    for (int i = 0; i < n; i++) {
+        file >> delta[i];
     }
 
     file.close();
-
 }
 
 
 
 
+// Question 2: Deepest Twin Leaf Depth
+// File format:
+//   a single line containing the level-order representation of the tree,
+//   space separated, where the literal token "null" marks a missing child.
+//   e.g. 1 2 3 3 null null 2
+//
+// Output arrays:
+//   values[i]  : value of the i-th node in level order (meaningless if present[i] is false)
+//   present[i] : true if the i-th slot in the level order holds an actual node
+void question2_reader(const string& file_path, vector<int>& values, vector<bool>& present) {
+    ifstream infile(file_path);
+    if (!infile.is_open()) {
+        cerr << "Error: Cannot open file " << file_path << endl;
+        return;
+    }
 
-void question2_reader(
-    const string &file_path,
-    vector<int> &preorder,
-    vector<int> &inorder,
-    vector<vector<int>> &leaf_parcels,
-    vector<vector<int>> &queries
+    string token;
+    while (infile >> token) {
+        if (token == "null") {
+            values.push_back(0);
+            present.push_back(false);
+        } else {
+            values.push_back(stoi(token));
+            present.push_back(true);
+        }
+    }
+
+    infile.close();
+}
+
+
+
+
+// Question 3: Automated Mailroom Robot
+// File format:
+//   line 1        : N E C S
+//   next E lines  : u v w
+//   next line     : K
+//   next line     : C integers (destination room ids, in conveyor/queue order)
+void question3_reader(
+    const string& file_path,
+    int& N,
+    vector<vector<int>>& edges,
+    int& S,
+    int& K,
+    vector<int>& destinations
 ) {
     ifstream infile(file_path);
     if (!infile.is_open()) {
@@ -67,98 +89,25 @@ void question2_reader(
         return;
     }
 
-    string line;
-    string section;
+    int E, C;
+    infile >> N >> E >> C >> S;
 
-    while (getline(infile, line)) {
-        if (line.empty()) continue;  // skip blank lines
-        stringstream ss(line);
-
-        // Detect section headers
-        if (line.find("preorder:") == 0) {
-            section = "preorder";
-            line = line.substr(9); // remove "preorder: "
-        } else if (line.find("inorder:") == 0) {
-            section = "inorder";
-            line = line.substr(8);
-        } else if (line.find("parcel_on_leafs:") == 0) {
-            section = "parcel";
-            continue;
-        } else if (line.find("queries:") == 0) {
-            section = "queries";
-            continue;
-        }
-
-        if (section == "preorder") {
-            ss.clear(); ss.str(line);
-            int num;
-            while (ss >> num) preorder.push_back(num);
-        } 
-        else if (section == "inorder") {
-            ss.clear(); ss.str(line);
-            int num;
-            while (ss >> num) inorder.push_back(num);
-        } 
-        else if (section == "parcel") {
-            vector<int> parcels;
-            int num;
-            while (ss >> num) parcels.push_back(num);
-            if (!parcels.empty()) leaf_parcels.push_back(parcels);
-        } 
-        else if (section == "queries") {
-            vector<int> q;
-            int num;
-            while (ss >> num) q.push_back(num);
-            if (!q.empty()) queries.push_back(q);
-        }
+    edges.assign(E, vector<int>(3));
+    for (int i = 0; i < E; i++) {
+        infile >> edges[i][0] >> edges[i][1] >> edges[i][2];
     }
+
+    infile >> K;
+
+    destinations.resize(C);
+    for (int i = 0; i < C; i++) {
+        infile >> destinations[i];
+    }
+
     infile.close();
 }
 
 
 
 
-void question3_reader(const string& file_path, vector<vector<int>>& edges, vector<int>& metro_cities) {
-    ifstream infile(file_path);
-    if (!infile.is_open()) {
-        cerr << "Error opening file!" << endl;
-        return;
-    }
-
-    string line;
-    bool reading_edges = false, reading_metro = false;
-
-    while (getline(infile, line)) {
-        if (line.empty()) continue;  // skip empty lines
-
-        if (line.find("edges:") != string::npos) {
-            reading_edges = true;
-            reading_metro = false;
-            continue;
-        }
-        if (line.find("metro_cities:") != string::npos) {
-            reading_edges = false;
-            reading_metro = true;
-            continue;
-        }
-
-        stringstream ss(line);
-
-        if (reading_edges) {
-            vector<int> edge;
-            int val;
-            while (ss >> val) edge.push_back(val);
-            if (!edge.empty()) edges.push_back(edge);
-        }
-        else if (reading_metro) {
-            int city;
-            while (ss >> city) metro_cities.push_back(city);
-        }
-    }
-    infile.close();
-}
-
-
-
-
-#endif 
+#endif
