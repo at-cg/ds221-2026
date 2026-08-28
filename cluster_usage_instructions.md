@@ -3,13 +3,13 @@
 ## Login Instructions
 1. **SSH Address:** `10.24.1.10`
 2. **Username:** Use your IISc email ID **without** `@iisc.ac.in`
-3. **Password:** `defaultpassword`
+3. **Password:** `newuser123`
 
 **Example Login:** 
-(If the iisc email id of student is: parveshbarak@iisc.ac.in)
+(If the iisc email id of student is: moupriyas@iisc.ac.in)
 ```bash
-ssh parveshbarak@10.24.1.10
-parveshbarak@10.24.1.10’s password: defaultpassword
+ssh moupriyas@10.24.1.10
+moupriyas@10.24.1.10’s password: newuser123
 ```
 
 ## Note:
