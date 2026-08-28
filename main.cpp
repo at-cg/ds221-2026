@@ -18,13 +18,13 @@ using namespace std::chrono;
  */
 void question1(string input_file, string output_file)
 {
-    vector<vector<int>> parcels;
+    vector<int> delta;
     // read from input file
-    question1_reader(input_file, parcels);
+    question1_reader(input_file, delta);
 
     auto start = high_resolution_clock::now();
 
-    vector<vector<int>> output =  question_one(parcels);
+    long long output = question_one(delta);
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
@@ -44,21 +44,21 @@ void question1(string input_file, string output_file)
 void question2(string input_file, string output_file)
 {
 
-    vector<int> preorder, inorder;
-    vector<vector<int>> leaf_parcels, queries;
+    vector<int> values;
+    vector<bool> present;
     // read from input file
-    question2_reader(input_file, preorder, inorder, leaf_parcels, queries);
+    question2_reader(input_file, values, present);
 
     auto start = high_resolution_clock::now();
 
-    vector<int> output =  question_two(preorder, inorder, leaf_parcels, queries);
+    int output = question_two(values, present);
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
     auto computeDuration = duration.count();
     std::cout << "Time taken by function: " << duration.count() << " microseconds" << endl;
     std::cout << "Total time taken: " << computeDuration << " microseconds" << endl;
-   
+
     // write output to file
     question2_writer(output_file, output);
 
@@ -70,18 +70,18 @@ void question2(string input_file, string output_file)
  *
  */
 
-void question3(string input_file, string output_file) 
+void question3(string input_file, string output_file)
 {
 
+    int N, S, K;
     vector<vector<int>> edges;
-    vector<int> metro_cities;  
+    vector<int> destinations;
     // read from input file
-    question3_reader(input_file, edges, metro_cities);
-
+    question3_reader(input_file, N, edges, S, K, destinations);
 
     auto start = high_resolution_clock::now();
 
-    int output =  question_three(edges, metro_cities);
+    long long output = question_three(N, edges, S, K, destinations);
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
@@ -89,7 +89,7 @@ void question3(string input_file, string output_file)
     std::cout << "Time taken by function: " << duration.count() << " microseconds" << endl;
     std::cout << "Total time taken: " << computeDuration << " microseconds" << endl;
 
-    // write output ot file
+    // write output to file
     question3_writer(output_file, output);
 
 }
