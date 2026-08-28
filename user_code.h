@@ -11,38 +11,36 @@
 using namespace std;
 
 
-/* 
+/*
 Complete this function
 */
 
-vector<vector<int>> question_one(const vector<vector<int>>& parcels) {
+long long question_one(const vector<int>& delta) {
     // TODO: Implement function
 }
 
 
 
-/* 
+/*
 Complete this function
 */
 
-vector<int> question_two(
-    const vector<int>& preorder,
-    const vector<int>& inorder,
-    const vector<vector<int>>& leafParcels,
-    const vector<vector<int>>& query
-) {
+int question_two(const vector<int>& values, const vector<bool>& present) {
     // TODO: Implement function
 }
 
 
 
 
-/* 
+/*
 Complete this function
 */
 long long question_three(
+    int N,
     const vector<vector<int>>& edges,
-    const vector<int>& metro_cities
+    int S,
+    int K,
+    const vector<int>& destinations
 ) {
     // TODO: Implement function
 }
