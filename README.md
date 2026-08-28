@@ -45,7 +45,7 @@ In the final version of your code that you will submit, avoid printing anything 
 
 ## SUBMISSION INSTRUCTIONS
 
-Submit a zipped file `<YourIIScHandle>.zip` where you replace `<YourIIScHandle>` with the prefix of your IISc email. For example, `<YourIIScHandle>=govindsagar` if your IISc email is govindsagar@iisc.ac.in. Inside this zip file, you will have a single folder named `<YourIIScHandle>/`, and within this folder include exactly two files:  
+Submit a zipped file `<YourIIScHandle>.zip` where you replace `<YourIIScHandle>` with the prefix of your IISc email. For example, `<YourIIScHandle>=govindsagar` if your IISc email is govindsagar@iisc.ac.in. Inside this zip file, you will have a single folder named `<YourIIScHandle>`, and within this folder include exactly two files:  
   1. `user_code.h` – This file should contain all of your code. 
   2. `<YourIIScHandle>.pdf` – This file should include your experimental setup, observations and analysis, plots, and any other required documentation and acknowledgements.  
 
