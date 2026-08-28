@@ -104,7 +104,7 @@ The robot must pick up packages from the conveyor belt (which acts as a **Queue*
 Your task is to write an algorithm that calculates the **minimum total time** required for the robot to load and deliver all packages. *(Assume the graph to be connected).*
 
 **The Rules & Mechanics:**
-* **The Building:** The office is an undirected graph of rooms (nodes) connected by hallways (edges). Each hallway has a travel time (weight).
+* **The Building:** The office is an undirected graph of rooms (nodes) connected by hallways (edges). Each hallway has a travel time (weight). *(Assume the graph to be connected).*
 * **The Arrival Room:** Node `0` is always the Arrival Room. The robot loads packages and starts delivery from here.
 * **Loading:** Loading takes `1` unit of time per package. The first package loaded from the queue goes to the bottom of the stack; the last package loaded stays on top.
 * **Delivering:** Delivering takes `0` units of time after reaching the room. The robot can only drop off a package if it is in the correct room (i.e. the room for which the current package is designated) AND that package is currently at the top of the stack.
@@ -120,12 +120,6 @@ Read from a standard text file with the following structure:
 
 ### Output Format
 * **Minimum Total Time:** A single integer representing the fastest possible time to load and complete all deliveries.
-
-### Deliverables to Report
-Along with your source code, you must submit a brief technical report containing:
-* **Empirical Runtime:** Execution time analysis by varying the graph size.
-* **Theoretical Analysis:** Time and space complexity in Big-O notation.
-* **Optimization:** Is it possible to achieve an asymptotically faster runtime? If no, explain why. If yes, explain or implement the optimal approach.
 
 ### Constraints
 
