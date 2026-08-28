@@ -45,18 +45,18 @@ In the final version of your code that you will submit, avoid printing anything 
 
 ## SUBMISSION INSTRUCTIONS
 
-Submit a zipped file `iischandle.zip` where you replace `iischandle` with the prefix of your IISc email (e.g., `govindsagar` if your IISc email is `govindsagar@iisc.ac.in`). Inside this zip file, you will have a single folder named `iischandle/`, and within this folder include exactly two files:  
+Submit a zipped file `<YourIIScHandle>.zip` where you replace `<YourIIScHandle>` with the prefix of your IISc email. For example, `<YourIIScHandle>=govindsagar` if your IISc email is govindsagar@iisc.ac.in. Inside this zip file, you will have a single folder named `<YourIIScHandle>/`, and within this folder include exactly two files:  
   1. `user_code.h` – This file should contain all of your code. 
-  2. `iischandle.pdf` – This file should include your experimental setup, observations and analysis, plots, and any other required documentation and acknowledgements.  
+  2. `<YourIIScHandle>.pdf` – This file should include your experimental setup, observations and analysis, plots, and any other required documentation and acknowledgements.  
 
 So the file structure should look like this:  
 ```
-iischandle.zip
-|--iischandle\
+<YourIIScHandle>.zip
+|--<YourIIScHandle>
    |-- user_code.h
-   |-- iischandle.pdf
+   |-- <YourIIScHandle>.pdf
 ```
-Any deviation from the specified file or folder names, or failure to follow the instructions for completing the assignment will result in a penalty.
+Any deviation from the specified file or folder names, or failure to follow the instructions for completing the assignment may result in a penalty.
 
 -----------------------------------------------------------------------------------------------------------------------
 
