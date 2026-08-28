@@ -10,9 +10,9 @@
 | File / Folder | Description |
 | --- | --- |
 | [README.md](README.md) | This file — instructions, questions, and grading |
-| [function_syntax.md](function_syntax.md) | Function signatures and input/output format for each question |
 | [user_code.h](user_code.h) | **Starter file — write your solutions here** |
 | [main.cpp](main.cpp) | Driver program that reads input, calls your functions, times them, and writes output (do not modify) |
+| [Makefile](Makefile) | For compiling code and running test cases (do not modify) |
 | [file_reader.h](file_reader.h) | Input file parsing helpers (do not modify) |
 | [file_writer.h](file_writer.h) | Output file writing helpers (do not modify) |
 | [sample_test/](sample_test/) | Sample input/output files for sanity-checking your solution |
@@ -27,22 +27,28 @@
 ## INSTRUCTIONS
 All problems must be solved using C++ and compile/execute correctly on the [teaching cluster](cluster_usage_instructions.md). You may test and debug on your local machine, but the final evaluation will be done on the cluster. 
 
-All performance numbers given in your report should be on compute nodes of the cluster. Profiling experiments should be run during your assigned timeslot to avoid performance interference. We should be able to reproduce your performance results.
+All performance numbers given in your report should be on compute nodes of the cluster. Profiling experiments should be run during your assigned timeslot to avoid performance interference. TAs should be able to reproduce your performance results.
 
-You are required to actively use Copilot to solve the programming part of the problem, to generate the solution code, and to test code. You are responsible for checking the accuracy of the code, including edge cases.
+AI tools may be used for coding assistance. However, students with limited programming experience are encouraged to develop their programming skills and code without use of AI tools. If you use AI tools while developing your code, you must acknowledge their use in your report. Using AI tools is NOT allowed for preparing the report. 
 
-You MUST NOT collaborate with other students or take help from other (non-Copilot) online sources to solve any part of the problem, including code, prompts, algorithms, time/space complexity, etc. You must keep your answers inaccessible to other students.
+Your understanding of any line in your code, your algorithms and data structures, your design choices will be tested during **oral viva conducted by the TAs**. Therefore, you are strongly encouraged to independently think and design the overall algorithm. You should critically evaluate alternative approaches on your own. Expect a few conceptual questions related to this assignment in written exams.   
 
-You are provided a `main.cpp` file which calls helper functions for tasks such as file reading and writing output to a file. By default, this uses the sample input and output provided by us. You can edit the file paths in `main.cpp` if you need to change the input files. You must not change anything else in `main.cpp`. We will run our own test cases using this file, so any modifications beyond the allowed changes could affect your evaluation. You are also not allowed to change the other files used for file operations (`file_writer.h`, `file_reader.h`).
+You must keep your answers inaccessible to other students. Do not fork this repository because it would make your GitHub repository public by default. You are required to secure your teaching cluster account using a strong password. Please note that there will be no tolerance of academic dishonesty or negligence. 
+
+You are provided a `main.cpp` file which calls helper functions for tasks such as file reading and writing output to a file. You are also provided a `Makefile` to compile the code. You must not change anything else in `main.cpp`. We will run our own test cases using this file, so any modifications beyond the allowed changes could affect your evaluation. You are also not allowed to change the other files used for file operations (`file_writer.h`, `file_reader.h`).
 
 All functions you write should be added to the `user_code.h` file. You must adhere to the function signatures specified in `user_code.h`. You are allowed to add additional helper functions to `user_code.h` if necessary, as long as the main function signatures remain unchanged.
 
-DO NOT PRINT ANYTHING TO THE CONSOLE from code you write in the final submission. Your code will be auto-graded. Any deviation from instructions will cause grading to fail and you will get zero points.
+You are encouraged to start assignment early and make weekly progress. Use of GitHub for checkpointing your daily progress is strongly encouraged. While using GitHub, you must keep your code private. Excuses like `my laptop crashed and I lost my code` will not be entertained. 
+
+You are strongly encouraged to start the assignment early and make steady progress each week. We recommend using GitHub to maintain regular checkpoints of your work and track your code changes. While using GitHub, your repository must remain private. Periodically push your code to GitHub. Excuses like *my laptop crashed and I lost my code* will not be accepted.
+
+In your final code submission, do not print anything to the console from the code you write.
 
 ## SUBMISSION INSTRUCTIONS
 
-Please submit a zipped file `iischandle.zip` where you replace `iischandle` with the prefix of your IISc email (e.g., `parveshbarak` if your IISc email is `parveshbarak@iisc.ac.in`). Inside this zip file, you will have a single folder named `iischandle/`, and within this folder include exactly two files:  
-  1. `user_code.h` – This file should contain all of your code.  
+Submit a zipped file `iischandle.zip` where you replace `iischandle` with the prefix of your IISc email (e.g., `govindsagar` if your IISc email is `govindsagar@iisc.ac.in`). Inside this zip file, you will have a single folder named `iischandle/`, and within this folder include exactly two files:  
+  1. `user_code.h` – This file should contain all of your code. 
   2. `iischandle.pdf` – This file should include your experimental setup, observations and analysis, plots, and any other required documentation and acknowledgements.  
 
 So the file structure should look like this:  
@@ -52,7 +58,7 @@ iischandle.zip
    |-- user_code.h
    |-- iischandle.pdf
 ```
-**Any deviation from the specified file or folder names, or failure to follow the instructions for completing the assignment, *will* result in a penalty.**
+Any deviation from the specified file or folder names, or failure to follow the instructions for completing the assignment will result in a penalty.
 
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -117,9 +123,8 @@ Explanation: The best streak is just the single least-negative day, `[-1]`, givi
 ---
 
 #### Grading  
-- 1 mark for code  
 - 2 marks for profiling and report  
-- 1 mark for viva  
+- 2 marks for code and viva  
 
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -171,21 +176,20 @@ Explanation: Leaves: `[1,2,3]` & `[1,3,2]` (depth 2, twins) and `[1,2,3,7]` & `[
 
 Note: If there is, say, only one leaf at the deepest level, but valid pair one level shallower, you must not return `-1` just because the deepest level has an unpaired leaf.
 
-Hints:
+### Hints
 
-Hint 1 — How do you tell "same multiset" quickly?
+Hint 1: How do you tell "same multiset" quickly?
 When you walk from the root down to a leaf, you get a list of numbers (the path). To check if two paths are anagrams of each other, you don't need to compare them directly — you can just **sort each path** and compare the sorted versions. (If two sorted paths are equal, the original paths must have the same numbers, just possibly in a different order.)
 
-Hint 2 — Group leaves so you're not comparing everyone to everyone.
+Hint 2: Group leaves so you're not comparing everyone to everyone.
 Instead of comparing every pair of leaves in the whole tree, put each leaf into a "bucket" based on its `(depth, sorted path)`. Any two leaves in the *same* bucket automatically have the same multiset.
 
-Hint 3 — Inside one bucket, how do you check "different order"?
+Hint 3: Inside one bucket, how do you check "different order"?
 Within a bucket, look at the **original (unsorted) paths**. If two leaves in the same bucket have the *exact same* original path, they're just duplicates of each other — not twins.
 
 #### Grading  
-- 1 mark for code  
 - 2 marks for profiling and report  
-- 1 mark for viva  
+- 2 marks for code and viva  
 
 
 
@@ -232,13 +236,13 @@ Read from a standard text file with the following structure:
 * $1 \le C \le 10$
 * $0 \le S, w \le 1000$
 
-### Hints: Automated Mailroom Robot
+### Hints
 
-**Hint 1:** Calculating all-pair shortest paths may be useful, if you look at the small number of packages, you might realize you only need the distances between a few key rooms.
+Hint 1: Calculating all-pair shortest paths may be useful, if you look at the small number of packages, you might realize you only need the distances between a few key rooms.
 
-**Hint 2:** Think about how the stack (LIFO) naturally reverses your default delivery order. Also, ask yourself if going to the sorting room a second time would ever actually help.
+Hint 2: Think about how the stack (LIFO) naturally reverses your default delivery order. Also, ask yourself if going to the sorting room a second time would ever actually help.
 
-**Hint 3:** Since there are at most 10 packages (C <= 10), consider if the number of possible delivery combinations after a sort is small enough that you can just try all of them.
+Hint 3: Since there are at most 10 packages (C <= 10), consider if the number of possible delivery combinations after a sort is small enough that you can just try all of them.
 
 ### Sample Test Cases
 
@@ -260,9 +264,11 @@ Loading 3 packages takes: 3
 Sorting on node 0 takes: 2 [sorted as: 2,1,3 (top to bottom on stack)]
 Delivery takes: 10 + 20 + 10 = 40
 Total time: 45
+```
 
 #### Grading  
-- 3 marks for code  
 - 3 marks for profiling and report  
-- 1 mark for viva  
+- 4 mark for code and viva  
 
+## Need help? 
+If you have any question, you can raise them during the weekly tutorial sessions with the TAs. You can also raise your question on DS221 Teams- `Doubts` channel.

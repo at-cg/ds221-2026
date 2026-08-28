@@ -24,7 +24,7 @@ void question1(string input_file, string output_file)
 
     auto start = high_resolution_clock::now();
 
-    long long output = question_one(delta);
+    auto output = question_one(delta);
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
@@ -51,7 +51,7 @@ void question2(string input_file, string output_file)
 
     auto start = high_resolution_clock::now();
 
-    int output = question_two(values, present);
+    auto output = question_two(values, present);
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
@@ -81,7 +81,7 @@ void question3(string input_file, string output_file)
 
     auto start = high_resolution_clock::now();
 
-    long long output = question_three(N, edges, S, K, destinations);
+    auto output = question_three(N, edges, S, K, destinations);
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
@@ -99,7 +99,7 @@ void question3(string input_file, string output_file)
 // DO NOT MODIFY THIS SECTION
 //////////////////////////////////////////////////////////////////////////////////
 /**
- * @brief Do not modify this code. FIXME add comments.
+ * @brief Do not modify this code.
  *
  * @param argc
  * @param argv
