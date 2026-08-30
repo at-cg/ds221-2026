@@ -108,6 +108,14 @@ void question3(string input_file, string output_file)
 
 int main(int argc, char **argv)
 {
+    if (argc < 7)
+    {
+        cerr << "Error: Insufficient arguments provided." << endl;
+        cerr << "Usage: " << argv[0]
+            << " <q1_input_file> <q1_output_file> <q2_input_file> <q2_output_file> <q3_input_file> <q3_output_file>" << endl;
+        return 1;
+    }
+
     string question1_input_file = argv[1];
     string question1_output_file = argv[2];
     string question2_input_file = argv[3];
