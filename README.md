@@ -212,7 +212,7 @@ Your task is to write an algorithm that calculates the **minimum total time** re
 * **The Arrival Room:** Node `0` is always the Arrival Room. The robot loads packages and starts delivery from here.
 * **Loading:** Loading takes `1` unit of time per package. The first package loaded from the queue goes to the bottom of the stack; the last package loaded stays on top.
 * **Delivering:** Delivering takes `0` units of time after reaching the room. The robot can only drop off a package if it is in the correct room (i.e. the room for which the current package is designated) AND that package is currently at the top of the stack.
-* **Sorting:** Navigating to the Sorting Room and rearranging the stack takes a fixed time penalty of `S` units of time, regardless of how many packages are in the stack.
+* **Sorting:** After navigating to the Sorting Room, rearranging the stack takes a fixed time penalty of `S` units of time, regardless of how many packages are in the stack.
 * **Completion:** The task is complete when all packages in the bin have been delivered.
 
 ### Input Format
